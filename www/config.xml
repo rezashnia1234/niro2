@@ -76,8 +76,8 @@
     -->	
 	<!-- <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />-->
     <plugin spec="https://github.com/phonegap/phonegap-plugin-push.git" source="git" />
-	<gap:plugin name="hu.dpal.phonegap.plugins.uniquedeviceid" />
-	<gap:plugin name="com.phonegap.plugin.statusbar" />
+	<plugin spec="https://github.com/Paldom/UniqueDeviceID.git" source="git" />
+	<plugin spec="https://github.com/apache/cordova-plugin-statusbar.git " source="git" />
 	<gap:config-file platform="ios" parent="UIStatusBarHidden">
 		<true/>
 	</gap:config-file>
