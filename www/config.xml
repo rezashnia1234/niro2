@@ -75,7 +75,7 @@
 		<gap:plugin name="com.kumbe.phonegap.zoom.zoomcontrol" version="0.1.5" />
     -->	
 	<!-- <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />-->
-    <gap:plugin name="com.phonegap.plugins.pushplugin" />
+    <plugin spec="https://github.com/phonegap/phonegap-plugin-push.git" source="git" />
 	<gap:plugin name="hu.dpal.phonegap.plugins.uniquedeviceid" />
 	<gap:plugin name="com.phonegap.plugin.statusbar" />
 	<gap:config-file platform="ios" parent="UIStatusBarHidden">
