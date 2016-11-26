@@ -7,7 +7,7 @@ function errorHandler (error) {
 	//alert('error = ' + error);
 }
 function onNotificationAPN(event) {
-	var pushNotification = window.plugins.pushNotification;
+	// var pushNotification = window.plugins.pushNotification;
 	console.log("Received a notification! " + event.alert);
 	console.log("event sound " + event.sound);
 	console.log("event badge " + event.badge);
@@ -195,12 +195,12 @@ function register_notification_home() {
 	{
 		if(window.sessionStorage.getItem('register_for_notifs') == null)
 		{
-			pushNotification = window.plugins.pushNotification;
+			// pushNotification = window.plugins.pushNotification;
 			console.log('SMGROUP ::::::::::::::::::::::::::::::::::::    register_for_notifs : no // ' + device.platform);
 			if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
-				pushNotification.register(successHandler,errorHandler,{"senderID":"1069136326484","ecb":"onNotificationGCM_home"});
+				// pushNotification.register(successHandler,errorHandler,{"senderID":"1069136326484","ecb":"onNotificationGCM_home"});
 			} else {
-				pushNotification.register(tokenHandler_home,errorHandler,{"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});//"onNotificationAPN"});
+				// pushNotification.register(tokenHandler_home,errorHandler,{"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});//"onNotificationAPN"});
 			}
 		}
 	}
@@ -240,12 +240,12 @@ function register_notification() {
 	{
 		if(window.sessionStorage.getItem('register_for_notifs') == null)
 		{
-			pushNotification = window.plugins.pushNotification;
+			// pushNotification = window.plugins.pushNotification;
 			console.log('SMGROUP ::::::::::::::::::::::::::::::::::::    register_for_notifs : no // ' + device.platform);
 			if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
-				pushNotification.register(successHandler,errorHandler,{"senderID":"1069136326484","ecb":"onNotificationGCM"});
+				// pushNotification.register(successHandler,errorHandler,{"senderID":"1069136326484","ecb":"onNotificationGCM"});
 			} else {
-				pushNotification.register(tokenHandler,errorHandler,{"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});//"onNotificationAPN"});
+				// pushNotification.register(tokenHandler,errorHandler,{"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});//"onNotificationAPN"});
 			}
 		}
 	}
