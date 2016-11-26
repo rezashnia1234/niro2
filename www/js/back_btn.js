@@ -42,6 +42,15 @@
 	function go_back_adab() {
 		goto_perv_page('adab.html',false);
 	}
+	function go_back_ashnayi_ba_niru() {
+		goto_perv_page('ashnayi_ba_niru.html',false);
+	}
+	function go_back_ashnayi_ba_niru_defaemoghadas() {
+		goto_perv_page('ashnayi_ba_niru_defaemoghadas.html',false);
+	}
+	function go_back_ashnayi_ba_niru_shohada() {
+		goto_perv_page('ashnayi_ba_niru_shohada.html',false);
+	}
 	
 	function go_back_map() {
 		goto_perv_page('map.html',false);

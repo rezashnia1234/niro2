@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+    <title>بسم الله الرحمن الرحيم</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+
+    <link rel="stylesheet" type="text/css" href="css/template.css">
+
+	<script src="js/jquery-2.2.2.min.js"></script>
+	<!--<script src="js/console.log.js"></script>-->
+    <script src="cordova.js"></script>
+    <script src="js/jquery.md5.js"></script>
+    <script src="js/fastclick.js"></script>
+    <script src="js/hammer.min.js"></script>
+    <script src="js/back_btn.js"></script>
+	<script src="js/notification.js"></script>
+	<script src="js/iscroll.js"  type="text/javascript"></script>
+
+	<script>
+		function init() {		
+			console.log('SMGROUP ::::::::::::::::::::::::::::::::::::    start init()');
+			document.addEventListener("deviceready", onDeviceReady, false);
+			
+			var mc = new Hammer(document.body);
+			mc.on("swiperight", function(ev) {
+				goto_home();
+				//if(ev.velocity>0.8){console.log(ev.type +" gesture detected.");}
+			});
+			
+			/**** added by mahdi *********/
+			if(isRetina())
+			{
+				$('.retina').each( function(i) {
+					var back = $(this).css('background-image');
+					back = back.replace("/low", "/high");
+					$(this).css('background-image',back);
+				});
+				$('.retina:before').each( function(i) {
+					var back = $(this).css('background-image');
+					back = back.replace("/low", "/high");
+					$(this).css('background-image',back);
+				});
+				
+			}
+			var myScroll = new iScroll('smm_salat_wrapper', { hideScrollbar: true, bounce : "enable" });
+		}
+
+
+		function onDeviceReady() {
+			console.log('SMGROUP ::::::::::::::::::::::::::::::::::::    start onDeviceReady()');
+
+			
+			var networkState = navigator.connection.type;
+
+			FastClick.attach(document.body);
+			if ( device.platform == 'Android' ){//Android,iOS,win7=WinCE,win8=Win32NT
+				document.addEventListener("backbutton", goto_home, false);
+			}
+
+			
+			console.log('SMGROUP ::::::::::::::::::::::::::::::::::::    finish onDeviceReady()');
+			register_notification();
+		}
+
+			
+			
+			
+			
+
+		$(window).load(function() {		
+			setTimeout(function(){
+				$(".mypreload").html("");
+			}, 800);
+		});
+
+
+		function isHighDensity(){
+			return ((window.matchMedia && (window.matchMedia('only screen and (min-resolution: 124dpi), only screen and (min-resolution: 1.3dppx), only screen and (min-resolution: 48.8dpcm)').matches || window.matchMedia('only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6/2), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (min-device-pixel-ratio: 1.3)').matches)) || (window.devicePixelRatio && window.devicePixelRatio > 1.3));
+		}
+		function isRetina(){
+			return ((window.matchMedia && (window.matchMedia('only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx), only screen and (min-resolution: 75.6dpcm)').matches || window.matchMedia('only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)').matches)) || (window.devicePixelRatio && window.devicePixelRatio >= 2)) && /(iPad|iPhone|iPod)/g.test(navigator.userAgent);
+		}
+		$(document).ready(function(){
+
+		});
+	</script>	
+
+		
+		
+		
+<style>
+.smm_map_title {
+    width: 90%;
+    height: 14vw;
+    background-image: url('images/low/map_title.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: auto;
+    vertical-align: middle;
+}
+.hm_map_link{
+	width:100%;
+	height:23vw;
+	background-color:#25b3db;
+	background-image:url('images/low/map_haram_text.png'),url('images/low/map_haram.jpg');
+	margin-bottom:4.4vw;
+	display:block;
+    background-size: contain,auto 100%;
+	background-repeat: no-repeat;
+	background-position: left center,right center;
+	border-radius: 1.5vw;
+}
+.najaf{background-image:url('images/low/map_najaf_text.png'),url('images/low/map_najaf.jpg');}
+.karbala{background-image:url('images/low/map_karbala_text.png'),url('images/low/map_karbala.jpg');}
+.kazemein{background-image:url('images/low/map_kazemein_text.png'),url('images/low/map_kazemein.jpg');}
+.samera{background-image:url('images/low/map_samera_text.png'),url('images/low/map_samera.jpg');}
+.smm_salat_content {top: 29vw;bottom:0;}
+.smm_salat_content22 {margin-top: 29vw;}
+</style>
+</head>
+
+<body onload="init();" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" id="body" class="smm_ziarat_body retina">
+	<div class="bg" ></div>
+	<div class="container " id="container" >
+		<div id="ajax" class="mypreload">
+			<div style="z-index: 1000; border: medium none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background-color: #1e92c4; opacity: 1; cursor: default; position: fixed;overflow:visible;" class="blockUI blockOverlay"></div>
+			<div style="z-index: 1011; position: fixed; padding: 0px; margin: 0px; width: 100%; top: 28%; left: 0%; text-align: center;border: medium none;overflow:visible;" class="blockUI blockMsg blockPage"><img src="images/preloader.gif"></div>
+			<div style="z-index: 1012; position: fixed; padding: 0px; margin: 0px; width: 100%; top: 50%; left: 0%; text-align: center;border: medium none;overflow:visible;height:500px;" class="blockUI blockMsg blockPage"><img src="images/loading.png" width="70%"></div>
+		</div>
+		<div class="smm_content">
+			<div class="smm_map_title retina" style="background-image: url('images/low/temp_title.png');">
+				<a href="#" onclick="goto_perv_page('index.html',false);">
+					<span class="smm_ziarat_back"></span>
+				</a>
+			</div>
+			<div class="smm_salat_content">
+				<div id="smm_salat_wrapper">
+					<div>
+						<a class="hm_map_link retina haram"		style="background-image: url('images/low/temp_menu_bg.png'),url('images/low/temp_menu_bg.jpg');"	href="#" onclick2="goto_next_page('ashnayi_ba_niru_tarikhche.html',false);" ></a>
+						<a class="hm_map_link retina najaf"		style="background-image: url('images/low/temp_menu_bg.png'),url('images/low/temp_menu_bg.jpg');"	href="#" onclick2="goto_next_page('ashnayi_ba_niru_defaemoghadas.html',false);" ></a>
+						<a class="hm_map_link retina karbala"	style="background-image: url('images/low/temp_menu_bg.png'),url('images/low/temp_menu_bg.jpg');"	href="#" onclick2="goto_next_page('ashnayi_ba_niru_amaliyat.html',false);" ></a>
+						<a class="hm_map_link retina kazemein"	style="background-image: url('images/low/temp_menu_bg.png'),url('images/low/temp_menu_bg.jpg');"	href="#" onclick2="goto_next_page('ashnayi_ba_niru_shohada.html',false);" ></a>
+						<a class="hm_map_link retina kazemein"	style="background-image: url('images/low/temp_menu_bg.png'),url('images/low/temp_menu_bg.jpg');"	href="#" onclick2="goto_next_page('ashnayi_ba_niru_shohada.html',false);" ></a>
+						<a class="hm_map_link retina kazemein"	style="background-image: url('images/low/temp_menu_bg.png'),url('images/low/temp_menu_bg.jpg');"	href="#" onclick2="goto_next_page('ashnayi_ba_niru_shohada.html',false);" ></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
