@@ -50,10 +50,10 @@
 				var networkState = navigator.connection.type;
 				if ((networkState == Connection.NONE) && need_internet) {
 					navigator.notification.alert(
-						'يجب عليك الاتصال بالانترنت',  // message
+						'شما برای مشاهده این صفحه به اینترنت نیاز دارید',  // message
 						alertDismissed,         // callback
-						'تنبيه',            // title
-						'نعم'                  // buttonName
+						'توجه',            // title
+						'تائید'                  // buttonName
 					);
 					function alertDismissed(){};
 				}
@@ -104,9 +104,6 @@
 			if ( device.platform == 'Android' ){//Android,iOS,win7=WinCE,win8=Win32NT
 				document.addEventListener("backbutton", go_back_index, false);
 			}			
-			if ( device.platform == 'Android' ){//Android,iOS,win7=WinCE,win8=Win32NT
-				$(".PrayTimes_page").attr("onclick","goto_next_page('salat-gps.html',false);");
-			}		
 			
 			if(window.localStorage.getItem('uuid') == null)
 				window.plugins.uniqueDeviceID.get(uniqueDeviceIDsuccess_index, uniqueDeviceIDfail_index);
@@ -180,10 +177,10 @@
 		};
 		function need_internet_alert(){
 			navigator.notification.alert(
-				'يجب عليك الاتصال بالانترنت',  // message
+				'شما برای مشاهده این صفحه به اینترنت نیاز دارید',  // message
 				alertDismissed,         // callback
-				'تنبيه',            // title
-				'نعم'                  // buttonName
+				'توجه',            // title
+				'تائید'                  // buttonName
 			);
 			function alertDismissed(){};
 		};

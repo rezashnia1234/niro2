@@ -48,6 +48,9 @@
 	function go_back_ashnayi_ba_niru_defaemoghadas() {
 		goto_perv_page('ashnayi_ba_niru_defaemoghadas.html',false);
 	}
+	function go_back_ashnayi_ba_niru_amaliyat() {
+		goto_perv_page('ashnayi_ba_niru_amaliyat.html',false);
+	}
 	function go_back_ashnayi_ba_niru_shohada() {
 		goto_perv_page('ashnayi_ba_niru_shohada.html',false);
 	}
@@ -90,10 +93,10 @@
 			var networkState = navigator.connection.type;
 			if ((networkState == Connection.NONE) && need_internet) {
 				navigator.notification.alert(
-					'يجب عليك الاتصال بالانترنت',  // message
+					'شما برای مشاهده این صفحه به اینترنت نیاز دارید',  // message
 					alertDismissed,         // callback
-					'تنبيه',            // title
-					'نعم'                  // buttonName
+					'توجه',            // title
+					'تائید'                  // buttonName
 				);
 				function alertDismissed(){};
 			}
@@ -143,10 +146,10 @@
 			var networkState = navigator.connection.type;
 			if ((networkState == Connection.NONE) && need_internet) {
 				navigator.notification.alert(
-					'يجب عليك الاتصال بالانترنت',  // message
+					'شما برای مشاهده این صفحه به اینترنت نیاز دارید',  // message
 					alertDismissed,         // callback
-					'تنبيه',            // title
-					'نعم'                  // buttonName
+					'توجه',            // title
+					'تائید'                  // buttonName
 				);
 				function alertDismissed(){};
 			}
