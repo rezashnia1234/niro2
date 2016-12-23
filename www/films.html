@@ -158,7 +158,7 @@
 			$('#smm_picture_wrapper ul li > div').click(function() {
 				var id = $(this)[0].id;
 				var file;
-				if (false){//device.platform == 'Android'){//Android,iOS,win7=WinCE,win8=Win32NT///android_asset/www/
+				if (device.platform == 'Android'){//Android,iOS,win7=WinCE,win8=Win32NT///android_asset/www/
 					file = "file:///android_asset/www/" + id;
 					VideoPlayer.play(file);
 				}
