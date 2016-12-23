@@ -75,9 +75,11 @@
 		<gap:plugin name="com.kumbe.phonegap.zoom.zoomcontrol" version="0.1.5" />
     -->	
 	<!-- <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />-->
+	<plugin spec="https://github.com/dawsonloudon/VideoPlayer.git" source="git" />
+
     <plugin spec="https://github.com/phonegap/phonegap-plugin-push.git" source="git" />
 	<plugin spec="https://github.com/Paldom/UniqueDeviceID.git" source="git" />
-	<plugin spec="https://github.com/apache/cordova-plugin-statusbar.git " source="git" />
+	<plugin spec="https://github.com/apache/cordova-plugin-statusbar.git" source="git" />
 	<gap:config-file platform="ios" parent="UIStatusBarHidden">
 		<true/>
 	</gap:config-file>
@@ -98,7 +100,6 @@
 	<!--<plugin spec="https://github.com/willyboy/cordova-plugin-local-notifications" platform="android" source="git" />-->
 	<!--<plugin spec="https://github.com/kd-code/cordova-plugin-hello" platform="android" source="git" />-->
 	<plugin name="com.telerik.plugins.nativepagetransitions" source="npm" />
-	<gap:plugin name="com.dawsonloudon.videoplayer" />
 	
     <!-- Define app icon      -->
     <icon src="images/splash/icon.png" platform="android" />
