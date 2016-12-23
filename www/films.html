@@ -157,11 +157,6 @@
 			$('#smm_picture_wrapper ul div').unbind("click");
 			$('#smm_picture_wrapper ul li > div').click(function() {
 				var id = $(this)[0].id;
-				type = 3;//$(this).attr('type');
-				var modal = document.getElementById('myModal');
-				var modalImg = document.getElementById("img01");
-				modal.style.display = "block";
-				//modalImg.src = id;
 				var file;
 				if (device.platform == 'Android'){//Android,iOS,win7=WinCE,win8=Win32NT///android_asset/www/
 					file = "file:///android_asset/www/" + id;
@@ -170,7 +165,9 @@
 				{
 					file = "file:///" + id;
 				}
-				VideoPlayer.play(file);
+				alert(file);
+				window.plugins.streamingMedia.playVideo(file);
+				//VideoPlayer.play(file);
 			});
 	});
 	function linkable() {
