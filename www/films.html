@@ -158,15 +158,23 @@
 			$('#smm_picture_wrapper ul li > div').click(function() {
 				var id = $(this)[0].id;
 				var file;
-				if (device.platform == 'Android'){//Android,iOS,win7=WinCE,win8=Win32NT///android_asset/www/
+				if (false){//device.platform == 'Android'){//Android,iOS,win7=WinCE,win8=Win32NT///android_asset/www/
 					file = "file:///android_asset/www/" + id;
+					VideoPlayer.play(file);
 				}
 				else
 				{
-					file = "file:///" + id;
+					//file = "file:///" + id;
+					file = '#film' + id;
+					file = file.replace("/", "").replace("/", "").replace("/", "").replace("/", "").replace("/", "").replace(".", "").replace(".", "");
+					//console.log(file);
+					//console.log("#filmgalleryvideo01mp4");
+					$(file)[0].play();
+					//$("video")[0].play();
+					//$('#film-galleryvideo01.mp4')[0].play();
 				}
-				alert(file);
-				window.plugins.streamingMedia.playVideo(file);
+				//alert(file);
+				
 				//VideoPlayer.play(file);
 			});
 	});
@@ -316,12 +324,18 @@
         <div class="smm_underimage">
             <span class="smm_news_visit">25</span>
         </div>
+		<video id="filmgalleryvideo01mp4" poster="gallery/video/01.jpg" style="width: 0;height: 0;overflow: hidden;display: inline-block;position: absolute;z-index: -10;" preload="auto" controls>
+			<source src="gallery/video/01.mp4">
+		</video>
     </div>
     <div id="gallery/video/02.mp4">
         <img src="gallery/video/02.jpg">
         <div class="smm_underimage">
             <span class="smm_news_visit">26</span>
         </div>
+		<video id="filmgalleryvideo02mp4" poster="gallery/video/02.jpg" style="width: 0;height: 0;overflow: hidden;display: inline-block;position: absolute;z-index: -10;" preload="auto" controls>
+			<source src="gallery/video/02.mp4">
+		</video>
     </div>
 </li>
 <li style="float: right; display: list-item;">
@@ -330,6 +344,9 @@
         <div class="smm_underimage">
             <span class="smm_news_visit">20</span>
         </div>
+		<video id="filmgalleryvideo03mp4" poster="gallery/video/03.jpg" style="width: 0;height: 0;overflow: hidden;display: inline-block;position: absolute;z-index: -10;" preload="auto" controls>
+			<source src="gallery/video/03.mp4">
+		</video>
     </div>
 </li>
 
