@@ -54,6 +54,9 @@
 	function go_back_ashnayi_ba_niru_shohada() {
 		goto_perv_page('ashnayi_ba_niru_shohada.html',false);
 	}
+	function go_back_gallery() {
+		goto_perv_page('gallery.html',false);
+	}
 	
 	function go_back_map() {
 		goto_perv_page('map.html',false);

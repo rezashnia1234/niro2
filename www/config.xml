@@ -98,6 +98,7 @@
 	<!--<plugin spec="https://github.com/willyboy/cordova-plugin-local-notifications" platform="android" source="git" />-->
 	<!--<plugin spec="https://github.com/kd-code/cordova-plugin-hello" platform="android" source="git" />-->
 	<plugin name="com.telerik.plugins.nativepagetransitions" source="npm" />
+	<gap:plugin name="com.dawsonloudon.videoplayer" />
 	
     <!-- Define app icon      -->
     <icon src="images/splash/icon.png" platform="android" />

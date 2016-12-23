@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+
+    <title>بسم الله الرحمن الرحيم</title>
+
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/template.css">
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+
+	<script src="js/jquery-2.2.2.min.js"></script>
+	<!--<script src="js/console.log.js"></script>-->
+    <script src="cordova.js"></script>
+    <script src="js/jquery.md5.js"></script>
+    <script src="js/fastclick.js"></script>
+    <script src="js/hammer.min.js"></script>
+    <script src="js/back_btn.js"></script>
+	<script src="js/notification.js"></script>
+	<script src="js/iscroll.js"  type="text/javascript"></script>
+	
+	<script>
+		function init() {		
+			console.log('SMGROUP ::::::::::::::::::::::::::::::::::::    start init()');
+			document.addEventListener("deviceready", onDeviceReady, false);
+			/**** added by mahdi *********/
+			if(isRetina())
+			{
+				$('.retina').each( function(i) {
+					var back = $(this).css('background-image');
+					back = back.replace("/low", "/high");
+					$(this).css('background-image',back);
+				});
+				$('.retina:before').each( function(i) {
+					var back = $(this).css('background-image');
+					back = back.replace("/low", "/high");
+					$(this).css('background-image',back);
+				});
+			}
+			var mc = new Hammer(document.body);
+			mc.on("swiperight", function(ev) {
+				go_back_news();
+			});
+			var isAlreadyLoading = 0, jump = false;
+ 			var myScroll = new iScroll('smm_news_wrapper', { hideScrollbar: true, bounce : "enable",useTransition: true });
+ 			
+			/*****************************/
+		}
+
+
+		function onDeviceReady() {
+		
+			var networkState = navigator.connection.type;
+
+			FastClick.attach(document.body);
+ 			if ( device.platform == 'Android' ){//Android,iOS,win7=WinCE,win8=Win32NT
+ 				document.addEventListener("backbutton", go_back_news, false);
+ 			}
+			
+			//register_notification();
+		}
+
+		$(window).load(function() {		
+			setTimeout(function(){
+				$(".mypreload").html("");
+			}, 800);
+		
+		});
+
+		function isHighDensity(){
+			return ((window.matchMedia && (window.matchMedia('only screen and (min-resolution: 124dpi), only screen and (min-resolution: 1.3dppx), only screen and (min-resolution: 48.8dpcm)').matches || window.matchMedia('only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6/2), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (min-device-pixel-ratio: 1.3)').matches)) || (window.devicePixelRatio && window.devicePixelRatio > 1.3));
+		}
+		function isRetina(){
+			return ((window.matchMedia && (window.matchMedia('only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx), only screen and (min-resolution: 75.6dpcm)').matches || window.matchMedia('only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)').matches)) || (window.devicePixelRatio && window.devicePixelRatio >= 2)) && /(iPad|iPhone|iPod)/g.test(navigator.userAgent);
+		}
+		$(document).ready(function(){
+			
+		});
+		var getUrlParameter = function getUrlParameter(sParam) {
+		    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+		        sURLVariables = sPageURL.split('&'),
+		        sParameterName,
+		        i;
+
+		    for (i = 0; i < sURLVariables.length; i++) {
+		        sParameterName = sURLVariables[i].split('=');
+
+		        if (sParameterName[0] === sParam) {
+		            return sParameterName[1] === undefined ? true : sParameterName[1];
+		        }
+		    }
+		};
+		
+	</script>	
+
+		
+		
+		
+<style>
+.smm_news_text,.smm_news_subject{padding-left:7px;padding-right:7px;}
+
+</style>	
+</head>
+<body onload="init();" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" id="body" class="smm_ziarat_body retina">
+	<div class="bg" ></div>
+	<div class="container " id="container" >
+			<div id="ajax" class="mypreload">
+				<div style="z-index: 1000; border: medium none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background-color: #1e92c4; opacity: 1; cursor: default; position: fixed;overflow:visible;" class="blockUI blockOverlay"></div>
+				<div style="z-index: 1011; position: fixed; padding: 0px; margin: 0px; width: 100%; top: 28%; left: 0%; text-align: center;border: medium none;overflow:visible;" class="blockUI blockMsg blockPage"><img src="images/preloader.gif"></div>
+				<div style="z-index: 1012; position: fixed; padding: 0px; margin: 0px; width: 100%; top: 50%; left: 0%; text-align: center;border: medium none;overflow:visible;height:500px;" class="blockUI blockMsg blockPage"><img src="images/loading.png" width="70%"></div>
+			</div>
+		<div class="smm_content">
+<!-- 			<div class="smm_news_title retina">
+				<a href="#" onclick="goto_perv_page('news.html',false);">
+					<span class="smm_ziarat_back"></span>
+				</a>
+			</div>
+ -->			<div id="smm_news_wrapper">
+				<div>
+<img src="news/08_big.jpg">
+<div class="smm_underimage">
+	<span class="smm_news_visit">50</span>
+	<span class="smm_news_date">1395/09/30</span>
+</div>
+<p class="smm_news_subject">نماینده ولی فقیه در استان بوشهر: نیروی دریایی ارتش و سپاه، مکمل هم و مایه افتخار و عزت هستند </p>
+<div class="smm_news_text">
+<p dir="RTL">فرماندهان منطقه دوم نیروی دریایی ارتش جمهوری اسلامی ایران با حضرت آیت الله صفایی بوشهری نماینده مقام معظم رهبری در استان و امام جمعه بوشهر دیدار نمودند.
+<br/>
+نماینده ولی فقیه در استان و امام جمعه بوشهر در این دیدار ضمن گرامیداشت یاد و خاطره شهدا به ویژه شهدای نیروی دریایی ارتش و تشکر از تلاش ها و کوشش های کارکنان منطقه دوم دریایی بوشهر، با بیان اینکه نیروی دریایی ایران تاریخی کهن دارد، فرمودند: در تاریخ دریانوردی ایران هیچگاه نیروی دریایی به اقتدار امروز نبوده و این خود موجب این شده که نظام ما دارای یک اقتدار ویژه هم در حوزه دریا و هم هندسه سیاسی و بین المللی گردد.
+<br/>
+وی با بیان اینکه اقتدار دریایی حال حاضر کشور در پرتو انقلاب شکوهمند اسلامی ایران به وجود آمده، افزودند: انقلاب اسلامی ایران منشأ تحولات بسیار عظیمی شد که یکی از آن تحولات، اقتدار نیروهای مسلح در تمامی عرصه های هندسی نیروهای نظامی است و این از آثار و برکات این انقلاب است.
+<br/>
+آیت الله صفایی بوشهری اظهار داشت: تا پیش از انقلاب در عرصه تجهیزات نظامی همواره یک کشور وابسته بوده ایم ولی بعد از انقلاب شکوهمند اسلامی ایران به یک خودکفایی در این عرصه رسیده ایم.
+<br/>
+نیروی دریایی ارتش جمهوری اسلامی ایران برای نظام مولّد اقتدار است
+<br/>
+نماینده مقام معظم رهبری در استان و امام جمعه بوشهر با بیان اینکه این خودکفایی در منطقه بی نظیر است و در حال دستیابی به یک توانمندی در عرصه بین المللی هستیم، ادامه دادند: هم اینک جزء محدود کشورهایی هستیم که به تولید سخت افزارهای نظامی دریایی دست پیدا کرده ایم و الحمدالله به زودی می توانیم این تجهیزات را به کشورهای دوست صادر کنیم.
+<br/>
+وی همچنین اظهار داشت: در عرصه میدانی هیچگاه نیروی دریایی ارتش جمهوری اسلامی ایران به اقتدار حضور میدانی کنونی نبوده است.
+<br/>
+آیت الله صفایی بوشهری افزود: در گذشته محدوده فعالیت نیروی دریایی ارتش تنها در خلیج فارس و دریایی عمان بود ولی اکنون با تدابیر فرمانده کل قوا حضرت امام خامنه ای ما وارد دریاها، آبراه های بین المللی و اقیانوس ها شده ایم.
+<br/>
+نماینده مقام معظم رهبری در استان و امام جمعه بوشهر بیان داشتند: مجموعه یک خانواده بزرگ است که این خانواده بزرگ برای نظام مولّد اقتدار است.
+<br/>
+بخش عظیمی از نظم نوین آینده جهان، منوط به مدیریت دریاها است
+<br/>
+وی تصریح کرد: اساساً همیشه نیروی دریایی جمهوری اسلامی ایران برای نظام تعیین کننده بوده به همین خاطر مقام معظم رهبری، نیروی دریایی ایران را نیروی دریایی راهبردی عنوان نموده اند.
+<br/>
+حضرت آیت الله صفایی بوشهری تأکید نمودند: نیروی دریایی ارتش جمهوری اسلامی ایران در استقلال و اقتدار نظام دارای نقش تعیین کننده است و مایه اقتدار، توانمندی و استقلال نظام مقدس جمهوری اسلامی ایران است.
+<br/>
+ایشان با بیان اینکه بخش عظیمی از نظم نوین آینده جهان، منوط به مدیریت دریاها است، اظهار داشتند: اگر یک قدرت بتواند دریاها را مدیریت کند می تواند بخش عظیمی از آن نظم و هندسه جهانی را طراحی و اعمال نظر کند.
+<br/>
+نیروی دریایی ارتش باید در تولیدات مورد نیاز، خودکفا باشد
+<br/>
+آیت الله صفایی بوشهری ادامه داد: اقتدار دریایی یک نظام موجب استقلال و توانمندی آن نظام در عرصه های مقاومت و دفاع است و اگر این اقتدار، اقتدار بین المللی باشد مایه اعمال نفوذ و سهم داشتن در نظم نوین جهان خواهد بود.
+<br/>
+نماینده مقام معظم رهبری در استان و امام جمعه بوشهر تأکید نمودند: به همین خاطر ما باید یک نیروی دریایی فوق العاده قوی در زمینه های سخت افزار، نرم افزار و تولید منابع انسانی داشته باشیم.
+<br/>
+وی با بیان اینکه نیروی دریایی ارتش جمهوری اسلامی ایران باید در تولیدات مورد نیاز، خودکفا باشد، افزودند: اکنون بخش عظیمی از نیازهای نظامی کشور را خود تولید می کنیم اما باید به درجه ای برسیم که دیگر کشورها علاوه بر اینکه ما را خودکفا می دانند به عنوان یک کشور مرجع نیز بشناسند.
+<br/>
+یکی از ابعاد اقتصاد مقاومتی، اقتصاد مقاومتی نیروهای مسلح است
+<br/>
+آیت الله صفایی بوشهری با بیان اینکه یکی از ابعاد اقتصاد مقاومتی به فرموده مقام معظم رهبری، اقتصاد مقاومتی نیروهای مسلح است، پیشنهاد داد: یک نشست فوق العاده اقتصاد مقاومتی نیروی مسلح برگزار و در این رابطه با شناسایی نیازها و عرضه به مراکز دانش بنیان، تمامی ابعاد اقتصاد مقاومتی نیروهای مسلح جمهوری اسلامی ایران در یک پروژه به شکل مدوّن طراحی و عملیاتی گردد.
+<br/>
+نماینده مقام معظم رهبری در استان و امام جمعه بوشهر در همین رابطه فرمودند: دشمن در عرصه تحریم ها قبل از هر چیز، ابتدا خرید و فروش تجهیزات نظامی را تحریم می کند چون باعث اقتدار است.
+<br/>
+نیروی دریایی ارتش و نیروی دریایی سپاه، مکمل هم و مایه افتخار و عزت هستند
+<br/>
+وی بیان داشت: الحمدالله منطقه دوم نیروی دریایی ارتش جمهوری اسلامی ایران در جنوب کشور همیشه به عنوان یک نیروی خوشنام، جدی، فرهنگی، ولایی، شجاع و دلیر مطرح بوده و گواه این مسئله، ناوچه پیکان و عزیزانی است که آن حماسه را آفریدند.
+<br/>
+آیت الله صفایی بوشهری در پایان تصریح کرد: نیروی دریایی ارتش جمهوری اسلامی ایران مستقر در استان بوشهر و نیروی دریایی سپاه، مکمل و در کنار هم و مایه افتخار و عزت نه تنها استان بلکه ایران هستند و همیشه منشأ تحقق عملیات حماسه آفرین بوده اند.
+<br/>
+</p>
+</div>
+				</div>
+			</div>
+		</div>
+			
+	</div>
+</body>
+</html>
